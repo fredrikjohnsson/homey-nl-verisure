@@ -12,18 +12,18 @@ class AlarmDriver extends Homey.Driver {
         console.log('onPairListDevices');
         let api = new Verisure();
         api.getInstallations();
-        api.delay();
-        
-        var devices = Array();
-        var i = 0;
+       
+        if(Homey.ManagerSettings.get('giid') != "") {
+            
+            var devices = Array();
+            var i = 0;
+            devices[i] = {};
+            devices[i]["name"] = Homey.ManagerSettings.get('alarm_name') + ' ' + Homey.ManagerSettings.get('alarm_houseno');
+            devices[i]["data"] = {};
+            devices[i]["data"]["id"] = Homey.ManagerSettings.get('giid');
 
-        devices[i] = {};
-        devices[i]["name"] = Homey.ManagerSettings.get('alarm_name') + ' ' + Homey.ManagerSettings.get('alarm_houseno');
-        devices[i]["data"] = {};
-        devices[i]["data"]["id"] = Homey.ManagerSettings.get('giid');
-
-        callback( null, devices);
-        
+            callback( null, devices);
+        }
         
 
     }

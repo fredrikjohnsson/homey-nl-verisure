@@ -10,7 +10,7 @@ class Alarm extends Homey.Device {
     // this method is called when the Device is inited
     onInit() {
         
-        const POLL_INTERVAL = 300000; // One minute
+        const POLL_INTERVAL = 5000; // One minute
 
         
         let api = new Verisure();
