@@ -37,19 +37,24 @@ class VerisureApp extends Homey.App {
 		this.log('[#130] Loading getUser()...');	
 		
 		if(Homey.ManagerSettings.get('username')) {
-			this.log('username found. loading api');
-			let api = new Verisure();
-			api.getToken();
-			this.log('requested token');
-			api.getInstallations();
 			
-			if(Homey.ManagerSettings.get('alarm_name') != null) {
-				return Homey.ManagerSettings.get('alarm_name') + ' ' + Homey.ManagerSettings.get('alarm_houseno');
+			this.log('username found. loading api');
+			
+			let api = new Verisure();
+			
+			api.getToken();
+			
+			if(Homey.ManagerSettings.get('token') != null) {
+				this.log('requested token');
+				api.getInstallations();
+			
+				if(Homey.ManagerSettings.get('alarm_name') != null) {
+					return Homey.ManagerSettings.get('alarm_name') + ' ' + Homey.ManagerSettings.get('alarm_houseno');
+				}
+				else {
+					return "NOTOK";
+				}
 			}
-			else {
-				return "NOTOK";
-			}
-
 			
 		} else {
 			
@@ -60,6 +65,7 @@ class VerisureApp extends Homey.App {
 		return false;
 	}
 
+	
 	async setUser(username, password) {
 		
 
