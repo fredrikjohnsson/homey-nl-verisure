@@ -10,7 +10,7 @@ class Alarm extends Homey.Device {
     // this method is called when the Device is inited
     onInit() {
         
-        const POLL_INTERVAL = 5000; // One minute
+        const POLL_INTERVAL = 30000; // 30 seconds
 
         
         let api = new Verisure();
@@ -34,13 +34,13 @@ class Alarm extends Homey.Device {
     onAlarmUpdate(state) {
         
         
-        if(state === "ARMED_HOME") {
+        if(state == "ARMED_HOME") {
             var v = "partially_armed";
         }
-        else if(state === "ARMED_AWAY") {
+        else if(state == "ARMED_AWAY") {
             var v = "armed";
         }
-        else if(state === "DISARMED") {
+        else if(state == "DISARMED") {
             var v = "disarmed";
         }
         else {
@@ -76,7 +76,7 @@ class Alarm extends Homey.Device {
     onCapabilityOnoff( value, opts, callback ) {
 
         // ... set value to real device
-        console.log("trigger on or off: " + value);
+        
 
         if(Homey.ManagerSettings.get('keycode')) {
             let api = new Verisure();

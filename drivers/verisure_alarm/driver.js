@@ -9,10 +9,11 @@ class AlarmDriver extends Homey.Driver {
 
     onPairListDevices( data, callback ) {
 
-        console.log('onPairListDevices');
+        
         let api = new Verisure();
         api.getInstallations();
-       
+        
+
         if(Homey.ManagerSettings.get('giid') != "") {
             
             var devices = Array();

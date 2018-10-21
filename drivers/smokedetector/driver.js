@@ -19,12 +19,11 @@ class Smokedetector extends Homey.Driver {
     onPairListDevices( data, callback ) {
 
         let api = new Verisure();
-        api.getOverview();
-        api.delay();
+        api.getClimateStatus();
         
         var d = Homey.ManagerSettings.get('climateStatus');
         if(d != null) {
-            console.log(d);
+            
             var devices = Array();
             var i = 0;
             var res = d["latestClimateSample"];
@@ -33,7 +32,7 @@ class Smokedetector extends Homey.Driver {
                 
                 
                 if(entry["deviceType"][0] && entry["deviceType"][0] === "SMOKE1" || entry["deviceType"][0] === "SMOKE2" || entry["deviceType"][0] === "SMOKE3") {
-                    console.log('found ' + entry["deviceArea"][0]);
+                    
                     devices[i] = {};
                     devices[i]["name"] = entry["deviceArea"][0];
                     devices[i]["data"] = {};

@@ -28,7 +28,7 @@ class SmartLock extends Homey.Driver {
 			d.forEach(function(entry) {
                 
                 
-                console.log('found SmartLock ' + entry["area"][0]);
+                
                 devices[i] = {};
                 devices[i]["name"] = entry["area"][0];
                 devices[i]["data"] = {};

@@ -20,7 +20,7 @@ class DoorWindow extends Homey.Driver {
 
         let api = new Verisure();
         api.getDoorWindow();
-        api.delay();
+        
         
         var d = Homey.ManagerSettings.get('doorWindow');
 		

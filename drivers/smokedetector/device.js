@@ -13,7 +13,7 @@ class Smokedetector extends Homey.Device {
     // this method is called when the Device is inited
     onInit() {
 
-        const POLL_INTERVAL = 300000; // 15 minutes
+        const POLL_INTERVAL = 30000; // 30 seconds
       
         // first run
         this.pollClimateStatus();
@@ -33,7 +33,7 @@ class Smokedetector extends Homey.Device {
 
     onHumidityChange(value) {
         
-        //this.log('onHumidityChange ');
+        
         
         if(value) {
             this.setCapabilityValue('measure_humidity', value);
@@ -71,7 +71,7 @@ class Smokedetector extends Homey.Device {
             var d = this.getName();
             
             let api = new Verisure();
-            api.getOverview();
+            api.getClimateStatus();
 
             
             var data = Homey.ManagerSettings.get('climateStatus');
@@ -87,8 +87,7 @@ class Smokedetector extends Homey.Device {
                         
                         if(entry["deviceArea"][0] && entry["deviceArea"][0] === d) {
                     
-                            console.log(d + ':' +parseInt(entry["temperature"][0]));
-                            console.log(d + ':' +parseInt(entry["humidity"]));
+                            
                             if(entry["temperature"][0]) {
                                 bla.onTempChange(parseInt(entry["temperature"][0]));
                             }

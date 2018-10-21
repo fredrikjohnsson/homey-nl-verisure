@@ -17,10 +17,10 @@ class VerisureApp extends Homey.App {
 	
 	onInit() {
 
-		this.log('[#46] VerisureApp is running...');
+		
 
 		let api = new Verisure();
-		
+		this.log('[#46] VerisureApp is running...');
 		
 
 	}
@@ -47,7 +47,8 @@ class VerisureApp extends Homey.App {
 			if(Homey.ManagerSettings.get('token') != null) {
 				this.log('requested token');
 				api.getInstallations();
-			
+				api.getOverview();
+				
 				if(Homey.ManagerSettings.get('alarm_name') != null) {
 					return Homey.ManagerSettings.get('alarm_name') + ' ' + Homey.ManagerSettings.get('alarm_houseno');
 				}

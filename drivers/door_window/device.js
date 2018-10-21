@@ -13,7 +13,7 @@ class DoorWindow extends Homey.Device {
     // this method is called when the Device is inited
     onInit() {
        
-        const POLL_INTERVAL = 5000; // 
+        const POLL_INTERVAL = 30000; // 30 seconds 
 
         // first run
         this.pollSensorStatus();
@@ -27,8 +27,8 @@ class DoorWindow extends Homey.Device {
     onSensorChange(value) {
         
         if(value) {
-            this.setCapabilityValue('alarm_contact', value);
-            this.log('onSensorChange Window:' +value);
+           this.setCapabilityValue('alarm_contact', value);
+           // this.log('onSensorChange Window:' +value);
         } 
         
     }
@@ -58,7 +58,7 @@ class DoorWindow extends Homey.Device {
 
 		if (Homey.ManagerSettings.get('username') != null) {      
             
-           	this.log('[#63] Polling door_window...');	
+           
             var d = this.getName();
             
             let api = new Verisure();
@@ -75,7 +75,7 @@ class DoorWindow extends Homey.Device {
                 
                     if(entry["area"][0] && entry["area"][0] === d) {
                         
-                        console.log('door_window value: [' + entry["state"][0] + ']');
+                       
                        
                         if(entry["state"][0] === "OPEN") {
                             var v = new Boolean(true);

@@ -17,12 +17,13 @@ class Temperature extends Homey.Driver {
     onPairListDevices( data, callback ) {
 
         let api = new Verisure();
-        api.getOverview();
-        api.delay();
+        
+        api.getClimateStatus()
         
         var d = Homey.ManagerSettings.get('climateStatus');
+
         if(d != null) {
-            console.log(d);
+            
             var devices = Array();
             var i = 0;
             var res = d["latestClimateSample"];

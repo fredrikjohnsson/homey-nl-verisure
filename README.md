@@ -22,6 +22,10 @@ If you like the app, you can always donate so i can keep improving it :)
 ---
 ### Changelog
 
+
+##### Version: 2.0.0
+- Rewritten API to solve crashes
+
 ##### Version: 1.1.2
 - Performance improvement
 

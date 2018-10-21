@@ -1,6 +1,6 @@
 {
   "id": "nl.verisure",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -23,157 +23,165 @@
   },
   "drivers": [
     {
-        "id": "smartlock",
-        "name": {
-            "en": "SmartLock",
-            "nl": "SmartLock"
+      "id": "smartlock",
+      "name": {
+        "en": "SmartLock",
+        "nl": "SmartLock"
+      },
+      "images": {
+        "large": "./drivers/smartlock/assets/large.png",
+        "small": "./drivers/smartlock/assets/small.png"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked"
+      ],
+      "pair": [
+        {
+          "id": "start"
         },
-        "images": {
-            "large": "./drivers/smartlock/assets/large.png",
-            "small": "./drivers/smartlock/assets/small.png"
-        },
-        "class": "lock",
-        "capabilities": [ "locked" ],
-        "pair": [
-          {
-              "id": "start"
-          },
-          {
-              "id": "list_devices",
-              "template": "list_devices",
-              "navigation": {
-                  "next": "add_devices"
-              }
-          },
-          {
-              "id": "add_devices",
-              "template": "add_devices"
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
       ]
     },
     {
-        "id": "smokedetector",
-        "name": {
-            "en": "Smokedetector",
-            "nl": "Rookmelder"
+      "id": "smokedetector",
+      "name": {
+        "en": "Smokedetector",
+        "nl": "Rookmelder"
+      },
+      "images": {
+        "large": "./drivers/smokedetector/assets/large.png",
+        "small": "./drivers/smokedetector/assets/small.png"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_humidity",
+        "measure_temperature"
+      ],
+      "pair": [
+        {
+          "id": "start"
         },
-        "images": {
-            "large": "./drivers/smokedetector/assets/large.png",
-            "small": "./drivers/smokedetector/assets/small.png"
-        },
-        "class": "sensor",
-        "capabilities": [ "measure_humidity", "measure_temperature" ],
-        "pair": [
-          {
-              "id": "start"
-          },
-          {
-              "id": "list_devices",
-              "template": "list_devices",
-              "navigation": {
-                  "next": "add_devices"
-              }
-          },
-          {
-              "id": "add_devices",
-              "template": "add_devices"
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
       ]
     },
     {
-        "id": "temperature",
-        "name": {
-            "en": "Temperature",
-            "nl": "Temperatuur"
+      "id": "temperature",
+      "name": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "images": {
+        "large": "./drivers/temperature/assets/large.png",
+        "small": "./drivers/temperature/assets/small.png"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "pair": [
+        {
+          "id": "start"
         },
-        "images": {
-            "large": "./drivers/temperature/assets/large.png",
-            "small": "./drivers/temperature/assets/small.png"
-        },
-        "class": "sensor",
-        "capabilities": [ "measure_temperature" ],
-        "pair": [
-          {
-              "id": "start"
-          },
-          {
-              "id": "list_devices",
-              "template": "list_devices",
-              "navigation": {
-                  "next": "add_devices"
-              }
-          },
-          {
-              "id": "add_devices",
-              "template": "add_devices"
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
       ]
     },
-
     {
-        "id": "door_window",
-        "name": {
-            "en": "Contactsensor",
-            "nl": "Contactsensor"
+      "id": "door_window",
+      "name": {
+        "en": "Contactsensor",
+        "nl": "Contactsensor"
+      },
+      "images": {
+        "large": "./drivers/door_window/assets/large.png",
+        "small": "./drivers/door_window/assets/small.png"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact"
+      ],
+      "pair": [
+        {
+          "id": "start"
         },
-        "images": {
-            "large": "./drivers/door_window/assets/large.png",
-            "small": "./drivers/door_window/assets/small.png"
-        },
-        "class": "sensor",
-        "capabilities": [ "alarm_contact" ],
-        "pair": [
-          {
-              "id": "start"
-          },
-          {
-              "id": "list_devices",
-              "template": "list_devices",
-              "navigation": {
-                  "next": "add_devices"
-              }
-          },
-          {
-              "id": "add_devices",
-              "template": "add_devices"
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
           }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
       ]
     },
-    
     {
-        "id": "verisure_alarm",
-        "name": {
-            "en": "Alarm Driver",
-            "nl": "Alarm Driver"
+      "id": "verisure_alarm",
+      "name": {
+        "en": "Alarm Driver",
+        "nl": "Alarm Driver"
+      },
+      "class": "homealarm",
+      "images": {
+        "large": "./drivers/verisure_alarm/assets/large.png",
+        "small": "./drivers/verisure_alarm/assets/small.png"
+      },
+      "capabilities": [
+        "homealarm_state"
+      ],
+      "capabilitiesOptions": {
+        "homealarm_state": {
+          "title": {
+            "en": "Alarm State",
+            "nl": "Alarm status"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
         },
-        "class": "homealarm",
-        "images": {
-            "large": "./drivers/verisure_alarm/assets/large.png",
-            "small": "./drivers/verisure_alarm/assets/small.png"
-        },
-        "capabilities": [ "homealarm_state"],
-        "capabilitiesOptions": {
-            "homealarm_state": {
-                "title": {
-                    "en": "Alarm State",
-                    "nl": "Alarm status"
-                }
-            }
-        },
-        "pair": [
-            {
-                "id": "list_devices",
-                "template": "list_devices",
-                "navigation": {
-                    "next": "add_devices"
-                }
-            },
-            {
-                "id": "add_devices",
-                "template": "add_devices"
-            }
-        ]
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     }
-  
   ]
 }

@@ -13,7 +13,7 @@ class SmartLock extends Homey.Device {
     // this method is called when the Device is inited
     onInit() {
        
-        const POLL_INTERVAL = 300000; // 
+        const POLL_INTERVAL = 30000; // 30 seconds 
 
         // first run
         this.pollSmartLockStatus();
