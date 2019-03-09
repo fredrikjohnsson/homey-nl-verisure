@@ -1,13 +1,13 @@
 {
-	"login-title": "Log in to Verisure",
-	"login": "Log in",
-	"logout": "Log out",
-	"username": "E-mail address",
-	"password": "Password",
-	"save": "Save",
-	"keycode_form": "Enter your personal keycode:",
-	"settings_saved": "Settings saved!",
-	"invalid_credentials": "Invalid e-mail address or password",
-	"donate-title": "Donations",
-	"donate-text": "If you like the app, you can always donate so i can keep improving it :)"
+	"login-title": "Logga in på Verisure",
+	"login": "Logga in",
+	"logout": "Logga ut",
+	"username": "E-postadress",
+	"password": "Lösenord",
+	"save": "Spara",
+	"keycode_form": "Ange din personliga PIN-kod:",
+	"settings_saved": "Inställningarna sparade!",
+	"invalid_credentials": "Ogiltlig e-postadress eller lösenord",
+	"donate-title": "Doneringar",
+	"donate-text": "Om du gillar appen kan du alltid donera, så jag kan fortsätta göra förbättringar av den :)"
 }
